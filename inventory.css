@@ -1,0 +1,48 @@
+.inventory-hero {
+    background: #2b65b3;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.inventory-summary {
+    background: white;
+    border: 1px solid #dce7f5;
+    border-radius: 10px;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.inventory-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.inventory-actions .btn {
+    min-width: 160px;
+    background: #1f4b8f;
+    color: white;
+    border: none;
+}
+
+.inventory-actions .btn:hover {
+    background: #153a6a;
+}
+
+.card {
+    position: relative;
+}
+
+.img-placeholder {
+    background: #e7efff;
+    color: #234b7f;
+    font-weight: 700;
+}

@@ -1,0 +1,59 @@
+.contact-hero {
+    background: #2e6cb9;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.contact-card {
+    background: white;
+    border: 1px solid #dce7f5;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.contact-form label {
+    display: block;
+    margin: 16px 0 8px;
+    font-weight: 600;
+    color: #1f3d72;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #b6d0f2;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form button {
+    margin-top: 18px;
+    background: #1f4b8f;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: #153a6a;
+}

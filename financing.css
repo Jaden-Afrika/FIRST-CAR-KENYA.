@@ -1,0 +1,74 @@
+.financing-hero {
+    background: #3a72b5;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero-copy {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.finance-grid {
+    display: grid;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.finance-card {
+    background: white;
+    border: 1px solid #dce7f5;
+    border-radius: 10px;
+    padding: 24px;
+}
+
+.finance-list {
+    list-style: none;
+    padding: 0;
+    margin: 16px 0 0;
+}
+
+.finance-list li {
+    margin-bottom: 12px;
+    padding-left: 18px;
+    position: relative;
+    color: #1f3d72;
+}
+
+.finance-list li:before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1f4b8f;
+}
+
+.financing-steps {
+    display: grid;
+    gap: 14px;
+}
+
+.step {
+    background: #eef5ff;
+    border-radius: 10px;
+    padding: 18px;
+}
+
+.finance-cta {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.finance-cta a {
+    display: inline-block;
+    padding: 14px 24px;
+    background: #1f4b8f;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.finance-cta a:hover {
+    background: #153a6a;
+}

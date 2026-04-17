@@ -1,44 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>First Car Kenya</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>First Car Kenya</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="main-header">
         <h1>First Car Kenya</h1>
         <nav>
-            <a href="#">Inventory</a>
-            <a href="#">Financing</a>
-            <a href="#">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="inventory.html">Inventory</a>
+            <a href="financing.html">Financing</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <section class="hero">
         <div class="search-box">
-            <input type="text" placeholder="Search by make or model...">
-            <button>Find My Car</button>
+            <input id="searchInput" type="text" placeholder="Search by make or model...">
+            <button id="searchButton">Find My Car</button>
         </div>
+        <p id="status" class="search-status"></p>
     </section>
 
     <main class="content">
-        <h2>Latest Arrivals</h2>
-        <div class="grid">
-         <div class="card">
-                <div class="img-placeholder">Image</div>
-            <div class="card-info">
-            <h3>Vehicle Title</h3>
-               <p class="price"></p>
-                    <button class="btn">View Details</button>
-                </div>
-            </div>
-            <div class="card"><div class="img-placeholder">Image</div><div class="card-info"><h3>Vehicle </h3><p class="price"></p><button class="btn">View Details</button></div></div>
-            <div class="card"><div class="img-placeholder">Image</div><div class="card-info"><h3>Vehicle </h3><p class="price"></p><button class="btn">View Details</button></div></div>
-        </div>
+      <h2>Latest Arrivals</h2>
+      <div class="grid" id="carGrid"></div>
     </main>
-
+    <script src="index.js" defer></script>
 </body>
 </html>

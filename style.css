@@ -2,13 +2,12 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #f4f8ff;
+    color: #0e2f5a;
 }
 
-
 .main-header {
-    background: #222;
+    background: #1f4b8f;
     color: white;
     padding: 1rem 5%;
     display: flex;
@@ -22,10 +21,14 @@ nav a {
     margin-left: 20px;
 }
 
+nav a:hover {
+    text-decoration: underline;
+}
 
 .hero {
-    background: #333;
-    height: 200px;
+    background: #2e6cb9;
+    color: white;
+    height: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,25 +37,31 @@ nav a {
 .search-box {
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     display: flex;
     gap: 10px;
+    box-shadow: 0 6px 18px rgba(34, 83, 155, 0.12);
 }
 
 .search-box input {
     padding: 10px;
     width: 300px;
-    border: 1px solid #ddd;
+    border: 1px solid #c6d8f1;
+    border-radius: 8px;
 }
 
 .search-box button {
-    background: #d9534f;
+    background: #1f4b8f;
     color: white;
     border: none;
     padding: 10px 20px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
+.search-box button:hover {
+    background: #153a6a;
+}
 
 .content {
     max-width: 1000px;
@@ -66,42 +75,45 @@ nav a {
     gap: 20px;
 }
 
-
 .card {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border: 1px solid #dce7f5;
+    border-radius: 8px;
     overflow: hidden;
+    box-shadow: 0 4px 12px rgba(18, 58, 112, 0.06);
 }
 
 .img-placeholder {
-    background: #ccc;
+    background: #e7efff;
     height: 180px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #666;
+    color: #234b7f;
+    font-weight: 700;
 }
 
 .card-info {
-    padding: 15px;
+    padding: 20px;
     text-align: center;
 }
 
 .price {
     font-weight: bold;
-    color: #222;
+    color: #1f4b8f;
     margin: 10px 0;
 }
 
 .btn {
     width: 100%;
-    padding: 8px;
-    background: #eee;
-    border: 1px solid #bbb;
+    padding: 10px;
+    background: #1f4b8f;
+    color: white;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
 }
 
 .btn:hover {
-    background: #ddd;
+    background: #143762;
 }
