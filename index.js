@@ -48,3 +48,37 @@ searchButton.addEventListener('click', () => {
 searchInput.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') searchButton.click();
 });
+
+
+const PEXELS_API_KEY = 'PASTE_YOUR_PEXEL,,';
+
+
+cars.forEach(async (car) => {
+    try {
+        
+        const imageRes = await fetch(`https://api.pexels.com/v1/search?query=${car.make}+${car.model}+car&per_page=1`, {
+            headers: { 'Authorization': '1qJQnI2dauxr0VIrrCz39kktjSq7Am2ZVBUqTPloArYRDPiEScTmwhxb' }
+        });
+        const imageData = await imageRes.json();
+        
+
+        const carImg = imageData.photos.length > 0 
+            ? imageData.photos[0].src.medium 
+            : 'https://placehold.co/600x400?text=No+Image+Available';
+
+        const carCard = `
+            <div class="card">
+                <img src="${carImg}" alt="${car.model}" class="car-image">
+                <div class="card-info">
+                    <h3>${car.make} ${car.model}</h3>
+                    <p>${car.year} | ${car.fueltype || 'Petrol'}</p>
+                    <p class="price">KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}</p>
+                    <button class="btn">View Details</button>
+                </div>
+            </div>
+        `;
+        carGrid.innerHTML += carCard;
+    } catch (err) {
+        console.error("Image failed to load", err);
+    }
+});
