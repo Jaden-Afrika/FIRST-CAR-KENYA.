@@ -17,7 +17,7 @@ The site’s got a no-nonsense design, thanks to a Software Engineer who knows h
  - Pexels API
 
 # LICENSES:
-This project uses the MIT License.
+This project uses the MIT Student License.
 
 # AUTHOR:
 Jaden Afrika.
