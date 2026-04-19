@@ -1,3 +1,5 @@
+const PEXELS_API_KEY = '1qJQnI2dauxr0VIrrCz39kktjSq7Am2ZVBUqTPloArYRDPiEScTmwhxb';
+
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const carGrid = document.getElementById('carGrid');
@@ -5,7 +7,7 @@ const statusText = document.getElementById('status');
 const detailsModal = document.getElementById('detailsModal');
 const closeBtn = document.getElementById('closeBtn');
 
-let carsData = []; // Store car data for details view
+let carsData = []; 
 
 async function getCars(query) {
     statusText.innerText = `Searching for "${query}"...`;
@@ -22,22 +24,36 @@ try {
         }
 
         statusText.innerText = `Showing results for ${query}:`;
-        carsData = cars; // Store the data
+        carsData = cars; 
 
-     cars.forEach((car, index) => {
-     const carCard = `
-      <div class="card" data-car-index="${index}">
-      <div class="img-placeholder">${car.make}</div>
-      <div class="card-info">
-      <h3>${car.make} ${car.model}</h3>
-      <p>${car.year} | ${car.fueltype || 'Petrol'}</p>
-    <p class="price">KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}</p>
-        <button class="btn view-details-btn">View Details</button>
+    cars.forEach(async (car) => {
+    let carImageUrl = "https://placehold.co/600x400?text=Car+Photo"; 
+
+    try {
+        const imgResponse = await fetch(`https://api.pexels.com/v1/search?query=${car.make}+${car.model}+car&per_page=1`, {
+            headers: { 'Authorization': PEXELS_API_KEY }
+        });
+        const imgData = await imgResponse.json();
+        if (imgData.photos && imgData.photos.length > 0) {
+            carImageUrl = imgData.photos[0].src.medium;
+        }
+    } catch (error) {
+        console.error("Image error:", error);
+    }
+
+    const carCard = `
+        <div class="card">
+            <img src="${carImageUrl}" alt="${car.make}" class="car-card-img">
+            <div class="card-info">
+                <h3>${car.make} ${car.model}</h3>
+                <p>${car.year} | ${car.fueltype || 'Petrol'}</p>
+                <p class="price">KSh ${(Math.floor(Math.random() * 10) * 100000 + 1500000).toLocaleString()}</p>
+                <button class="btn">View Details</button>
+            </div>
         </div>
-     </div>
-       `;
-     carGrid.innerHTML += carCard;
-     });
+    `;
+    carGrid.innerHTML += carCard;
+});
 
      // Add event listeners to View Details buttons
      document.querySelectorAll('.view-details-btn').forEach(btn => {

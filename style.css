@@ -13,6 +13,11 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    img {
+        height: 100px;
+        margin-right: 15px;
+        width: 160px;
+    }
 }
 
 nav a {
@@ -121,15 +126,12 @@ nav a:hover {
 .car-image {
     width: 100%;
     height: 200px;
-    object-fit: cover; /* This prevents the car from looking squished */
+    object-fit: cover; 
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     display: block;
 }
 
-/* Optional: remove your old img-placeholder styles if you're not using them anymore */
-
-/* Details Modal Styles */
 .details-modal {
     display: none;
     position: fixed;
@@ -236,4 +238,12 @@ nav a:hover {
     .details-image {
         height: 200px;
     }
+}
+.car-card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    display: block;
 }

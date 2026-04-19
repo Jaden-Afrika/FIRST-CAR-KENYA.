@@ -1,7 +1,6 @@
 const detailsModal = document.getElementById('detailsModal');
 const closeBtn = document.getElementById('closeBtn');
 
-// Car data for inventory page
 const carsData = [
     {
         make: 'Toyota',
@@ -53,7 +52,6 @@ const carsData = [
     }
 ];
 
-// Add event listeners to all View Details buttons
 document.querySelectorAll('.view-details-btn').forEach((btn, index) => {
     btn.addEventListener('click', function() {
         showDetails(index);
