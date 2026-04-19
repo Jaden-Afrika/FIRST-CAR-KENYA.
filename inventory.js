@@ -8,7 +8,8 @@ const carsData = [
         year: 2018,
         price: 'KES 1,850,000',
         transmission: 'Automatic',
-        fuel: 'Petrol'
+        fuel: 'Petrol',
+        image: 'images/corolla.jpg'
     },
     {
         make: 'Honda',
@@ -16,7 +17,8 @@ const carsData = [
         year: 2017,
         price: 'KES 1,950,000',
         transmission: 'Automatic',
-        fuel: 'Petrol'
+        fuel: 'Petrol',
+        image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg'
     },
     {
         make: 'Nissan',
@@ -24,7 +26,8 @@ const carsData = [
         year: 2019,
         price: 'KES 3,450,000',
         transmission: 'Automatic',
-        fuel: 'Diesel'
+        fuel: 'Diesel',
+        image: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'
     },
     {
         make: 'Mazda',
@@ -32,7 +35,8 @@ const carsData = [
         year: 2020,
         price: 'KES 4,150,000',
         transmission: 'Automatic',
-        fuel: 'Petrol'
+        fuel: 'Petrol',
+        image: 'https://images.pexels.com/photos/1719648/pexels-photo-1719648.jpeg'
     },
     {
         make: 'Mercedes-Benz',
@@ -40,7 +44,8 @@ const carsData = [
         year: 2016,
         price: 'KES 6,200,000',
         transmission: 'Automatic',
-        fuel: 'Petrol'
+        fuel: 'Petrol',
+        image: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'
     },
     {
         make: 'Ford',
@@ -48,15 +53,39 @@ const carsData = [
         year: 2018,
         price: 'KES 3,950,000',
         transmission: 'Manual',
-        fuel: 'Diesel'
+        fuel: 'Diesel',
+        image: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'
     }
 ];
 
-document.querySelectorAll('.view-details-btn').forEach((btn, index) => {
-    btn.addEventListener('click', function() {
-        showDetails(index);
+function displayCars() {
+    const carGrid = document.getElementById('carGrid');
+    carGrid.innerHTML = '';
+
+    carsData.forEach((car, index) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+            <img src="${car.image}" alt="${car.make} ${car.model}" class="car-inventory-img">
+            
+            <div class="card-info">
+                <h3>${car.year} ${car.make} ${car.model}</h3>
+                <p>${car.transmission} | ${car.fuel}</p>
+                <p class="price">${car.price}</p>
+                <button class="btn view-details-btn" data-index="${index}">View Details</button>
+            </div>
+        `;
+        carGrid.appendChild(card);
     });
-});
+
+    // Add event listeners to View Details buttons
+    document.querySelectorAll('.view-details-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const index = this.getAttribute('data-index');
+            showDetails(parseInt(index));
+        });
+    });
+}
 
 function showDetails(index) {
     const car = carsData[index];
@@ -69,6 +98,8 @@ function showDetails(index) {
     document.getElementById('detailsPrice').textContent = car.price;
     document.getElementById('detailsTransmission').textContent = car.transmission;
     document.getElementById('detailsFuel').textContent = car.fuel;
+    document.getElementById('detailsCarImage').src = car.image;
+    document.getElementById('detailsCarImage').alt = `${car.make} ${car.model}`;
 
     detailsModal.style.display = 'block';
 }
@@ -81,4 +112,8 @@ window.addEventListener('click', (e) => {
     if (e.target === detailsModal) {
         detailsModal.style.display = 'none';
     }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayCars(); // This runs the function immediately on load
 });

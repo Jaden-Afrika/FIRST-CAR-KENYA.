@@ -79,6 +79,8 @@ function showDetails(index) {
   document.getElementById('detailsModel').textContent = car.model;
   document.getElementById('detailsPrice').textContent = `KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}`;
   document.getElementById('detailsFuel').textContent = car.fueltype || 'Petrol';
+  document.getElementById('detailsCarImage').src = 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'; // Default car image
+  document.getElementById('detailsCarImage').alt = `${car.make} ${car.model}`;
 
   detailsModal.style.display = 'block';
 }
@@ -221,7 +223,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    getCars('Lexus'); 
+    getCars('Mercedes'); 
 });
 
 

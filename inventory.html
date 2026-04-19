@@ -37,63 +37,9 @@
   <button class="btn">Fuel type</button>
   <button class="btn">View offers</button>
 </div>
- <div class="grid">
-            <div class="card">
-    <div class="img-placeholder">Toyota Corolla</div>
-<div class="card-info">
- <h3>Toyota Corolla</h3>
-       <p>2018 · Automatic · Petrol</p>
-     <p class="price">KES 1,850,000</p>
-     <button class="btn view-details-btn">View Details</button>
-     </div>
+ <div class="grid" id="carGrid">
+        <!-- Cars will be populated here by JavaScript -->
     </div>
-    <div class="card">
-    <div class="img-placeholder">Honda Civic</div>
-    <div class="card-info">
-  <h3>Honda Civic</h3>
-    <p>2017 · Automatic · Petrol</p>
-     <p class="price">KES 1,950,000</p>
-     <button class="btn view-details-btn">View Details</button>
-     </div>
-     </div>
-     <div class="card">
-    <div class="img-placeholder">Nissan X-Trail</div>
-        <div class="card-info">
-    <h3>Nissan X-Trail</h3>
-    <p>2019 · Automatic · Diesel</p>
-    <p class="price">KES 3,450,000</p>
-   <button class="btn view-details-btn">View Details</button>
-  </div>￼
-
- </div>
- <div class="card">
-   <div class="img-placeholder">Mazda CX-5</div>
-  <div class="card-info">
-<h3>Mazda CX-5</h3>
-<p>2020 · Automatic · Petrol</p>
-<p class="price">KES 4,150,000</p>
-<button class="btn view-details-btn">View Details</button>
-</div>
-</div>
- <div class="card">
- <div class="img-placeholder">Mercedes-Benz C-Class</div>
- <div class="card-info">
-<h3>Mercedes C-Class</h3>
-<p>2016 · Automatic · Petrol</p>
- <p class="price">KES 6,200,000</p>
- <button class="btn view-details-btn">View Details</button>
-</div>
- </div>
- <div class="card">
- <div class="img-placeholder">Ford Ranger</div>
-  <div class="card-info">
-    <h3>Ford Ranger</h3>
-<p>2018 · Manual · Diesel</p>
-<p class="price">KES 3,950,000</p>
-<button class="btn view-details-btn">View Details</button>
-</div>
- </div>
-</div>
  </main>
 
  
@@ -101,7 +47,7 @@
 <div class="details-content">
 <button class="close-btn" id="closeBtn">&times;</button>
 <div class="details-body">
-<div class="details-image">Image</div>
+<div class="details-image"><img id="detailsCarImage" src="" alt="Car Image" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;"></div>
 <div class="details-info">
 <h2 id="detailsTitle"></h2>
 <p><strong>Year:</strong> <span id="detailsYear"></span></p>
