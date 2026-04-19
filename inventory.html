@@ -42,7 +42,7 @@
  <h3>Toyota Corolla</h3>
        <p>2018 · Automatic · Petrol</p>
      <p class="price">KES 1,850,000</p>
-     <button class="btn">View Details</button>
+     <button class="btn view-details-btn">View Details</button>
      </div>
     </div>
     <div class="card">
@@ -51,7 +51,7 @@
   <h3>Honda Civic</h3>
     <p>2017 · Automatic · Petrol</p>
      <p class="price">KES 1,950,000</p>
-     <button class="btn">View Details</button>
+     <button class="btn view-details-btn">View Details</button>
      </div>
      </div>
      <div class="card">
@@ -60,7 +60,7 @@
     <h3>Nissan X-Trail</h3>
     <p>2019 · Automatic · Diesel</p>
     <p class="price">KES 3,450,000</p>
-   <button class="btn">View Details</button>
+   <button class="btn view-details-btn">View Details</button>
   </div>￼
 
  </div>
@@ -70,7 +70,7 @@
 <h3>Mazda CX-5</h3>
 <p>2020 · Automatic · Petrol</p>
 <p class="price">KES 4,150,000</p>
-<button class="btn">View Details</button>
+<button class="btn view-details-btn">View Details</button>
 </div>
 </div>
  <div class="card">
@@ -79,7 +79,7 @@
 <h3>Mercedes C-Class</h3>
 <p>2016 · Automatic · Petrol</p>
  <p class="price">KES 6,200,000</p>
- <button class="btn">View Details</button>
+ <button class="btn view-details-btn">View Details</button>
 </div>
  </div>
  <div class="card">
@@ -88,10 +88,30 @@
     <h3>Ford Ranger</h3>
 <p>2018 · Manual · Diesel</p>
 <p class="price">KES 3,950,000</p>
-<button class="btn">View Details</button>
+<button class="btn view-details-btn">View Details</button>
 </div>
  </div>
 </div>
  </main>
-</body>
-</html>
+
+ <!-- Car Details Modal -->
+ <div class="details-modal" id="detailsModal">
+   <div class="details-content">
+     <button class="close-btn" id="closeBtn">&times;</button>
+     <div class="details-body">
+       <div class="details-image">Image</div>
+       <div class="details-info">
+         <h2 id="detailsTitle"></h2>
+         <p><strong>Year:</strong> <span id="detailsYear"></span></p>
+         <p><strong>Make:</strong> <span id="detailsMake"></span></p>
+         <p><strong>Model:</strong> <span id="detailsModel"></span></p>
+         <p><strong>Price:</strong> <span id="detailsPrice"></span></p>
+         <p><strong>Transmission:</strong> <span id="detailsTransmission"></span></p>
+         <p><strong>Fuel Type:</strong> <span id="detailsFuel"></span></p>
+         <button class="btn-primary">Contact Us for More Info</button>
+       </div>
+     </div>
+   </div>
+ </div>
+
+ <script src="inventory.js"></script>
