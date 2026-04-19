@@ -1,6 +1,3 @@
-const detailsModal = document.getElementById('detailsModal');
-const closeBtn = document.getElementById('closeBtn');
-
 const carsData = [
     {
         make: 'Toyota',
@@ -72,48 +69,13 @@ function displayCars() {
                 <h3>${car.year} ${car.make} ${car.model}</h3>
                 <p>${car.transmission} | ${car.fuel}</p>
                 <p class="price">${car.price}</p>
-                <button class="btn view-details-btn" data-index="${index}">View Details</button>
+                <a href="car-${index}.html" class="btn">View Details</a>
             </div>
         `;
         carGrid.appendChild(card);
     });
-
-    // Add event listeners to View Details buttons
-    document.querySelectorAll('.view-details-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const index = this.getAttribute('data-index');
-            showDetails(parseInt(index));
-        });
-    });
 }
-
-function showDetails(index) {
-    const car = carsData[index];
-    if (!car) return;
-
-    document.getElementById('detailsTitle').textContent = `${car.year} ${car.make} ${car.model}`;
-    document.getElementById('detailsYear').textContent = car.year;
-    document.getElementById('detailsMake').textContent = car.make;
-    document.getElementById('detailsModel').textContent = car.model;
-    document.getElementById('detailsPrice').textContent = car.price;
-    document.getElementById('detailsTransmission').textContent = car.transmission;
-    document.getElementById('detailsFuel').textContent = car.fuel;
-    document.getElementById('detailsCarImage').src = car.image;
-    document.getElementById('detailsCarImage').alt = `${car.make} ${car.model}`;
-
-    detailsModal.style.display = 'block';
-}
-
-closeBtn.addEventListener('click', () => {
-    detailsModal.style.display = 'none';
-});
-
-window.addEventListener('click', (e) => {
-    if (e.target === detailsModal) {
-        detailsModal.style.display = 'none';
-    }
-});
 
 document.addEventListener('DOMContentLoaded', () => {
-    displayCars(); // This runs the function immediately on load
+    displayCars(); 
 });

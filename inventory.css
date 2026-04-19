@@ -46,3 +46,129 @@
     color: #234b7f;
     font-weight: 700;
 }
+
+.car-detail-hero {
+    background: #2b65b3;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.car-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: white;
+    border: 1px solid #dce7f5;
+    border-radius: 10px;
+    padding: 40px;
+    margin-bottom: 30px;
+}
+
+.car-image {
+    text-align: center;
+}
+
+.car-detail-img {
+    width: 100%;
+    max-width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.car-info h2 {
+    color: #1f4b8f;
+    margin-bottom: 20px;
+}
+
+.car-info p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.car-info .btn-primary {
+    display: inline-block;
+    width: auto;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+.car-info .btn {
+    display: inline-block;
+    width: auto;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .car-detail {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        gap: 20px;
+    }
+    
+    .car-detail-img {
+        height: 200px;
+    }
+}
+
+/* Footer Styles */
+.main-footer {
+    background: #1f4b8f;
+    color: white;
+    padding: 40px 20px 20px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-section h3 {
+    color: #4a9eff;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.footer-section p {
+    margin: 8px 0;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin: 8px 0;
+}
+
+.footer-section ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #4a9eff;
+}
+
+.footer-bottom {
+    border-top: 1px solid #2e6cb9;
+    padding-top: 20px;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    color: #cccccc;
+}
