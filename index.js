@@ -50,7 +50,7 @@ if (e.key === 'Enter') searchButton.click();
 });
 
 
-const PEXELS_API_KEY = 'PASTE_YOUR_PEXEL,,';
+const PEXELS_API_KEY = '1qJQnI2dauxr0VIrrCz39kktjSq7Am2ZVBUqTPloArYRDPiEScTmwhxb';
 
 
 cars.forEach(async (car) => {
