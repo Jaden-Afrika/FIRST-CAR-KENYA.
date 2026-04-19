@@ -55,7 +55,7 @@ try {
     carGrid.innerHTML += carCard;
 });
 
-     // Add event listeners to View Details buttons
+
      document.querySelectorAll('.view-details-btn').forEach(btn => {
        btn.addEventListener('click', function() {
          const carIndex = this.closest('.card').getAttribute('data-car-index');
@@ -159,7 +159,6 @@ const cars = [
     }
 ];
 
-// Populate the inventory grid
 function displayCars() {
     const carGrid = document.getElementById('carGrid');
     carGrid.innerHTML = '';
@@ -178,7 +177,6 @@ function displayCars() {
         carGrid.appendChild(card);
     });
     
-    // Add event listeners to all View Details buttons
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function() {
             const carId = this.getAttribute('data-car-id');
@@ -187,13 +185,11 @@ function displayCars() {
     });
 }
 
-// Show car details page
 function showCarDetails(carId) {
     const car = cars.find(c => c.id === parseInt(carId));
     
     if (!car) return;
     
-    // Populate details page
     document.getElementById('detailsTitle').textContent = `${car.year} ${car.make} ${car.model}`;
     document.getElementById('detailsYear').textContent = car.year;
     document.getElementById('detailsMake').textContent = car.make;
@@ -202,23 +198,32 @@ function showCarDetails(carId) {
     document.getElementById('detailsMileage').textContent = car.mileage;
     document.getElementById('detailsDescription').textContent = car.description;
     
-    // Show details page, hide inventory
+
     document.getElementById('inventory').style.display = 'none';
     document.getElementById('detailsPage').style.display = 'block';
 }
 
-// Go back to inventory
+ 
 function goBackToInventory() {
     document.getElementById('detailsPage').style.display = 'none';
     document.getElementById('inventory').style.display = 'block';
 }
 
-// Event listener for back button
+
 document.addEventListener('DOMContentLoaded', function() {
     displayCars();
-    
+
     const backBtn = document.getElementById('backBtn');
     if (backBtn) {
         backBtn.addEventListener('click', goBackToInventory);
     }
 });
+
+window.addEventListener('DOMContentLoaded', () => {
+    
+    getCars('Lexus'); 
+});
+
+
+
+                  
