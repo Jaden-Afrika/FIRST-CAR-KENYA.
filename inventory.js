@@ -12,8 +12,8 @@ const carsData = [
         image: 'images/corolla.jpg'
     },
     {
-        make: 'Honda',
-        model: 'Civic',
+        make: 'Alfa',
+        model: 'Romeo',
         year: 2017,
         price: 'KES 1,950,000',
         transmission: 'Automatic',
@@ -21,8 +21,8 @@ const carsData = [
         image: 'https://images.pexels.com/photos/210019/pexels-photo-210019.jpeg'
     },
     {
-        make: 'Nissan',
-        model: 'X-Trail',
+        make: 'Mercedes',
+        model: 'AMG GT',
         year: 2019,
         price: 'KES 3,450,000',
         transmission: 'Automatic',
@@ -30,8 +30,8 @@ const carsData = [
         image: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'
     },
     {
-        make: 'Mazda',
-        model: 'CX-5',
+        make: 'AUDI',
+        model: 'A5',
         year: 2020,
         price: 'KES 4,150,000',
         transmission: 'Automatic',
@@ -48,8 +48,8 @@ const carsData = [
         image: 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'
     },
     {
-        make: 'Ford',
-        model: 'Ranger',
+        make: 'Mercedes ',
+        model: 'AMG GT',
         year: 2018,
         price: 'KES 3,950,000',
         transmission: 'Manual',

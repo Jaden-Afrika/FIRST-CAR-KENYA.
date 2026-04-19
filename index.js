@@ -79,7 +79,7 @@ function showDetails(index) {
   document.getElementById('detailsModel').textContent = car.model;
   document.getElementById('detailsPrice').textContent = `KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}`;
   document.getElementById('detailsFuel').textContent = car.fueltype || 'Petrol';
-  document.getElementById('detailsCarImage').src = 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'; // Default car image
+  document.getElementById('detailsCarImage').src = 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'; 
   document.getElementById('detailsCarImage').alt = `${car.make} ${car.model}`;
 
   detailsModal.style.display = 'block';
@@ -98,7 +98,7 @@ window.addEventListener('click', (e) => {
 searchButton.addEventListener('click', () => {
  const query = searchInput.value.trim();
  if (query) getCars(query);
-});
+ });
 
 searchInput.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') searchButton.click();
@@ -123,6 +123,7 @@ const cars = [
         mileage: "52,000 km",
         description: "Sporty sedan in excellent condition. Leather interior, sunroof, and advanced safety features."
     },
+    
     {
         id: 3,
         year: 2020,
@@ -132,6 +133,7 @@ const cars = [
         mileage: "65,000 km",
         description: "Compact and economical car perfect for city driving. Recently serviced with new tires."
     },
+    
     {
         id: 4,
         year: 2023,
@@ -141,6 +143,7 @@ const cars = [
         mileage: "32,000 km",
         description: "Spacious SUV with powerful engine. Perfect for families. All-wheel drive and modern tech."
     },
+    
     {
         id: 5,
         year: 2019,
@@ -150,6 +153,7 @@ const cars = [
         mileage: "78,000 km",
         description: "Reliable crossover with responsive handling. Backup camera and Bluetooth connectivity."
     },
+    
     {
         id: 6,
         year: 2022,
@@ -220,6 +224,7 @@ document.addEventListener('DOMContentLoaded', function() {
         backBtn.addEventListener('click', goBackToInventory);
     }
 });
+
 
 window.addEventListener('DOMContentLoaded', () => {
     
