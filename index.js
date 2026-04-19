@@ -104,66 +104,7 @@ searchInput.addEventListener('keypress', (e) => {
 if (e.key === 'Enter') searchButton.click();
 });
 
-const cars = [
-    {
-        id: 1,
-        year: 2022,
-        make: "Toyota",
-        model: "Corolla",
-        price: "KES 2,500,000",
-        mileage: "45,000 km",
-        description: "Well-maintained sedan with excellent fuel efficiency. Single owner, full service history."
-    },
-    {
-        id: 2,
-        year: 2021,
-        make: "Honda",
-        model: "Civic",
-        price: "KES 2,800,000",
-        mileage: "52,000 km",
-        description: "Sporty sedan in excellent condition. Leather interior, sunroof, and advanced safety features."
-    },
-    
-    {
-        id: 3,
-        year: 2020,
-        make: "Hyundai",
-        model: "i10",
-        price: "KES 1,800,000",
-        mileage: "65,000 km",
-        description: "Compact and economical car perfect for city driving. Recently serviced with new tires."
-    },
-    
-    {
-        id: 4,
-        year: 2023,
-        make: "Nissan",
-        model: "Pathfinder",
-        price: "KES 4,200,000",
-        mileage: "32,000 km",
-        description: "Spacious SUV with powerful engine. Perfect for families. All-wheel drive and modern tech."
-    },
-    
-    {
-        id: 5,
-        year: 2019,
-        make: "Mazda",
-        model: "CX-5",
-        price: "KES 3,500,000",
-        mileage: "78,000 km",
-        description: "Reliable crossover with responsive handling. Backup camera and Bluetooth connectivity."
-    },
-    
-    {
-        id: 6,
-        year: 2022,
-        make: "Volkswagen",
-        model: "Polo",
-        price: "KES 2,200,000",
-        mileage: "38,000 km",
-        description: "Efficient hatchback with German engineering. Great on fuel, perfect for daily commuting."
-    }
-];
+
 
 function displayCars() {
     const carGrid = document.getElementById('carGrid');
@@ -215,8 +156,21 @@ function goBackToInventory() {
     document.getElementById('inventory').style.display = 'block';
 }
 
+function askCarPreferences() {
+    const carType = prompt('Welcome to First Car Kenya! What kind of car are you looking for today?');
+    const maxBudget = prompt('How much are you willing to spend? Enter amount in KES (e.g. 2500000).');
+
+    if (carType && carType.trim()) {
+        searchInput.value = carType.trim();
+        statusText.innerText = `Looking for ${carType.trim()}${maxBudget && maxBudget.trim() ? ` under KES ${maxBudget.trim()}` : ''}.`;
+        getCars(carType.trim());
+    } else if (maxBudget && maxBudget.trim()) {
+        statusText.innerText = `Budget set to KES ${maxBudget.trim()}. Use the search box to choose a car type.`;
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function() {
+    askCarPreferences();
     displayCars();
 
     const backBtn = document.getElementById('backBtn');
@@ -225,12 +179,3 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-
-window.addEventListener('DOMContentLoaded', () => {
-    
-    getCars('Mercedes'); 
-});
-
-
-
-                  
