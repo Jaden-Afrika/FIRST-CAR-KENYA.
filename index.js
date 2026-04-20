@@ -24,48 +24,48 @@ try {
         }
 
         statusText.innerText = `Showing results for ${query}:`;
-        carsData = cars; 
+        carsData = cars;
 
-    cars.forEach(async (car) => {
-    let carImageUrl = "https://placehold.co/600x400?text=Car+Photo"; 
+    for (let i = 0; i < cars.length; i++) {
+        const car = cars[i];
+        let carImageUrl = "https://placehold.co/600x400?text=Car+Photo";
 
-    try {
-        const imgResponse = await fetch(`https://api.pexels.com/v1/search?query=${car.make}+${car.model}+car&per_page=1`, {
-            headers: { 'Authorization': PEXELS_API_KEY }
-        });
-        const imgData = await imgResponse.json();
-        if (imgData.photos && imgData.photos.length > 0) {
-            carImageUrl = imgData.photos[0].src.medium;
+        try {
+            const imgResponse = await fetch(`https://api.pexels.com/v1/search?query=${car.make}+${car.model}+car&per_page=1`, {
+                headers: { 'Authorization': PEXELS_API_KEY }
+            });
+            const imgData = await imgResponse.json();
+            if (imgData.photos && imgData.photos.length > 0) {
+                carImageUrl = imgData.photos[0].src.medium;
+            }
+        } catch (error) {
+            console.error("Image error:", error);
         }
-    } catch (error) {
-        console.error("Image error:", error);
+
+        car.imageUrl = carImageUrl;
+        carGrid.innerHTML += `
+            <div class="card" data-car-index="${i}">
+                <img src="${carImageUrl}" alt="${car.make} ${car.model}" class="car-card-img">
+                <div class="card-info">
+                    <h3>${car.make} ${car.model}</h3>
+                    <p>${car.year || 'N/A'} | ${car.fueltype || 'Petrol'}</p>
+                    <p class="price">KSh ${(Math.floor(Math.random() * 10) * 100000 + 1500000).toLocaleString()}</p>
+                    <button class="btn view-details-btn" data-car-index="${i}">View Details</button>
+                </div>
+            </div>
+        `;
     }
 
-    const carCard = `
-        <div class="card">
-            <img src="${carImageUrl}" alt="${car.make}" class="car-card-img">
-            <div class="card-info">
-                <h3>${car.make} ${car.model}</h3>
-                <p>${car.year} | ${car.fueltype || 'Petrol'}</p>
-                <p class="price">KSh ${(Math.floor(Math.random() * 10) * 100000 + 1500000).toLocaleString()}</p>
-                <button class="btn">View Details</button>
-            </div>
-        </div>
-    `;
-    carGrid.innerHTML += carCard;
-});
-
-
-     document.querySelectorAll('.view-details-btn').forEach(btn => {
-       btn.addEventListener('click', function() {
-         const carIndex = this.closest('.card').getAttribute('data-car-index');
-         showDetails(parseInt(carIndex));
-       });
-     });
+    document.querySelectorAll('.view-details-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const carIndex = parseInt(this.getAttribute('data-car-index'));
+            showDetails(carIndex);
+        });
+    });
 
     } catch (error) {
-    statusText.innerText = "Error loading data.";
-    console.error(error);
+        statusText.innerText = "Error loading data.";
+        console.error(error);
     }
 }
 
@@ -74,12 +74,13 @@ function showDetails(index) {
   if (!car) return;
 
   document.getElementById('detailsTitle').textContent = `${car.make} ${car.model}`;
-  document.getElementById('detailsYear').textContent = car.year;
-  document.getElementById('detailsMake').textContent = car.make;
-  document.getElementById('detailsModel').textContent = car.model;
-  document.getElementById('detailsPrice').textContent = `KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}`;
-  document.getElementById('detailsFuel').textContent = car.fueltype || 'Petrol';
-  document.getElementById('detailsCarImage').src = 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg'; 
+  document.getElementById('detailsType').textContent = `${car.make} ${car.model}`;
+  document.getElementById('detailsYear').textContent = car.year || 'Unknown';
+  document.getElementById('detailsMake').textContent = car.make || 'Unknown';
+  document.getElementById('detailsModel').textContent = car.model || 'Unknown';
+  document.getElementById('detailsPrice').textContent = car.price || `KSh ${(Math.floor(Math.random() * 15) * 100000 + 800000).toLocaleString()}`;
+  document.getElementById('detailsFuel').textContent = car.fueltype || car.fuel || 'Petrol';
+  document.getElementById('detailsCarImage').src = car.imageUrl || 'https://images.pexels.com/photos/3729464/pexels-photo-3729464.jpeg';
   document.getElementById('detailsCarImage').alt = `${car.make} ${car.model}`;
 
   detailsModal.style.display = 'block';

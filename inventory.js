@@ -1,5 +1,13 @@
 const carsData = [
-    
+    {
+        make: 'Toyota',
+        model: 'Corolla',
+        year: 2018,
+        price: 'KES 1,850,000',
+        transmission: 'Automatic',
+        fuel: 'Petrol',
+        image: ''
+    },
     {
         make: 'Alfa',
         model: 'Romeo',
