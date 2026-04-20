@@ -1,0 +1,20 @@
+{
+  "name": "first-car-kenya.",
+  "version": "1.0.0",
+  "description": "First Car Kenya is here to take the stress out of buying your first car. It’s an online marketplace designed for anyone in Kenya who wants a simple, easy way to find a reliable starter vehicle. Just search for any make or model, and you’ll get instant info—car details, year, fuel type, and more—right on the spot. The goal? Keep things easy, clear, and quick so you can pick your car without the usual headaches.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaden-Afrika/FIRST-CAR-KENYA..git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jaden-Afrika/FIRST-CAR-KENYA./issues"
+  },
+  "homepage": "https://github.com/Jaden-Afrika/FIRST-CAR-KENYA.#readme"
+}
