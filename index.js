@@ -7,7 +7,8 @@ const statusText = document.getElementById('status');
 const detailsModal = document.getElementById('detailsModal');
 const closeBtn = document.getElementById('closeBtn');
 
-let carsData = []; 
+let carsData = [];
+let maxBudget = ''; 
 
 async function getCars(query) {
     statusText.innerText = `Searching for "${query}"...`;
@@ -42,14 +43,18 @@ try {
             console.error("Image error:", error);
         }
 
+        const maxPrice = maxBudget ? parseInt(maxBudget.replace(/,/g, '')) : 2500000;
+        const price = Math.floor(Math.random() * (maxPrice - 500000) + 500000);
+
         car.imageUrl = carImageUrl;
+        car.price = `KSh ${price.toLocaleString()}`;
         carGrid.innerHTML += `
             <div class="card" data-car-index="${i}">
                 <img src="${carImageUrl}" alt="${car.make} ${car.model}" class="car-card-img">
                 <div class="card-info">
                     <h3>${car.make} ${car.model}</h3>
                     <p>${car.year || 'N/A'} | ${car.fueltype || 'Petrol'}</p>
-                    <p class="price">KSh ${(Math.floor(Math.random() * 10) * 100000 + 1500000).toLocaleString()}</p>
+                    <p class="price">KSh ${price.toLocaleString()}</p>
                     <button class="btn view-details-btn" data-car-index="${i}">View Details</button>
                 </div>
             </div>
@@ -159,7 +164,7 @@ function goBackToInventory() {
 
 function askCarPreferences() {
     const carType = prompt('Welcome to First Car Kenya! What kind of car are you looking for today?');
-    const maxBudget = prompt('How much are you willing to spend? Enter amount in KES (e.g. 2500000).');
+    maxBudget = prompt('How much are you willing to spend? Enter amount in KES (e.g. 2500000).');
     const carUsage = prompt('What would you use the car for? (e.g., daily commuting, family trips, off-road adventures)');
     const carBodyType = prompt('What body type are you interested in? (Sedan, SUV, or Hatchback)');
 
