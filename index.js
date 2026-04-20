@@ -160,6 +160,8 @@ function goBackToInventory() {
 function askCarPreferences() {
     const carType = prompt('Welcome to First Car Kenya! What kind of car are you looking for today?');
     const maxBudget = prompt('How much are you willing to spend? Enter amount in KES (e.g. 2500000).');
+    const carUsage = prompt('What would you use the car for? (e.g., daily commuting, family trips, off-road adventures)');
+    const carBodyType = prompt('What body type are you interested in? (Sedan, SUV, or Hatchback)');
 
     if (carType && carType.trim()) {
         searchInput.value = carType.trim();
