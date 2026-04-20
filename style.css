@@ -20,13 +20,14 @@
     .search-container {
         flex-direction: column; 
         width: 90%;
+        @media (max-width: 600px) {
     }
     
     .nav-links {
         display: none; 
     }
 }
-
+}
 body {
     font-family: 'Roboto', 'Helvetica Neue', sans-serif;
     margin: 0;
@@ -73,19 +74,19 @@ nav a:hover {
 }
 
 .search-box {
+    display: flex;
     background: white;
     padding: 20px;
     border-radius: 10px;
+    width: 90%;
     display: flex;
     gap: 10px;
     box-shadow: 0 6px 18px rgba(34, 83, 155, 0.12);
+    flex-direction: row;
 }
 
 .search-box input {
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #c6d8f1;
-    border-radius: 8px;
+    width: 100%;
 }
 
 .search-box button {
@@ -356,4 +357,4 @@ nav a:hover {
     height: auto;     
     max-height: 200px; 
     object-fit: cover;
-}
+};

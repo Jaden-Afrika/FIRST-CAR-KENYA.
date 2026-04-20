@@ -69,7 +69,7 @@ function displayCars() {
 describe('Car Card DOM Integrity Tests', () => {
     
     beforeEach(() => {
-        // Reset the DOM before each test
+        
         document.body.innerHTML = `<div id="carGrid"></div>`;
     });
 
@@ -170,7 +170,7 @@ describe('Car Card DOM Integrity Tests', () => {
         expect(buttons.length).toBe(3);
         
         buttons.forEach((button, index) => {
-            // Verify button exists and has required attributes
+            
             expect(button).toBeTruthy();
             expect(button.getAttribute('data-car-id')).toBe(String(index + 1));
             expect(button.textContent).toBe('View Details');
